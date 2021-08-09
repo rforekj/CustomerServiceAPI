@@ -1,0 +1,43 @@
+server:
+  port: 8087
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/customer_service_db?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: 251099
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: MYSQL
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+  mail:
+    host: smtp.gmail.com
+    username: hjeuxt251099@gmail.com
+    password: phamtrunghieu
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+logging:
+  level:
+    root: WARN
+    com.memorynotfound: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+
+security:
+  jwt:
+    token:
+      secret-key: secret-key
+      expire-length: 300000 # 5 m
+
+
+
